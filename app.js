@@ -1,13 +1,12 @@
 const express = require('express');
 const app = express();
-
 const path = require('path');//requring path for ejs files path
 
 
 
 
+app.use(express.static(path.join(__dirname, 'public'))); //default path for static/public files.
 app.set('view engin', 'ejs');//setting views engine for views templates
-
 app.set('views', path.join(__dirname, 'views')); //setting path for views templates
 
 
