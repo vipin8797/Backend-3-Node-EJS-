@@ -15,7 +15,15 @@ app.get('/', (req, res) => {
     res.send("Home route is working");
 })
 app.get('/index', (req, res) => {
-    res.render('index.ejs');
+    res.render('index.ejs', { name: 'Vipin Yadav' });
+})
+
+
+
+//Instagram route
+app.get('/ig/:username', (req, res) => {
+    const { username } = req.params;
+    res.render('instagram.ejs', { username });
 })
 
 
