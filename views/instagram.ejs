@@ -1,0 +1,19 @@
+<%- include('includes/layout.ejs')%>
+  <body>
+    <h1>Instagram</h1>
+    <h2>
+      This page belonges to @<u><b><%=username%></b></u>
+    </h2>
+    <button>Follow: <%= data.followers%></button>
+    <button>Following: <%=data.following%></button>
+
+    <hr />
+
+    <% for(post of data.posts){%>
+    <img src="<%=post.image%>" />
+    <p>Likes: <%=post.likes%></p>
+    <p>Comments: <%=post.comments%></p>
+    <hr />
+    <%}%>
+  </body>
+</html>
