@@ -22,9 +22,12 @@ app.get('/index', (req, res) => {
 
 //Instagram route
 app.get('/ig/:username', (req, res) => {
+    const instaData = require('./data.json');
     const { username } = req.params;
-    res.render('instagram.ejs', { username });
+    const data = instaData[username];
+    res.render('instagram.ejs', { username, data });
 })
+
 
 
 
